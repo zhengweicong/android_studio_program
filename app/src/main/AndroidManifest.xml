@@ -12,8 +12,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".activity.UserInfoActivity">
         </activity>
-        <activity android:name=".activity.BaseActivity">
-        </activity>
+
         <activity android:name=".activity.AddUserActivity"/>
         <activity android:name=".activity.MainActivity">
             <intent-filter>
@@ -36,6 +35,8 @@
         <activity android:name=".activity.ChooseSpecificationActivity">
         </activity>
         <activity android:name=".activity.AddSpecificationActivity">
+        </activity>
+        <activity android:name=".activity.CompensationInfoActivity">
         </activity>
     </application>
 

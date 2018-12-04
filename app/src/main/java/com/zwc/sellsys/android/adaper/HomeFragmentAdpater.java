@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.zwc.sellsys.android.R;
+import com.zwc.sellsys.android.activity.CompensationInfoActivity;
 import com.zwc.sellsys.android.activity.OrderInfoActivity;
 import com.zwc.sellsys.android.activity.SpecificationActivity;
 import com.zwc.sellsys.android.activity.UserInfoActivity;
@@ -29,9 +30,8 @@ public class HomeFragmentAdpater extends RecyclerView.Adapter<HomeFragmentAdpate
     @Override
     public MyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext).inflate( R.layout.item_home_category,parent,false);
-        MyHolder holder = new MyHolder(view);
 
-        return holder;
+        return new MyHolder(view);
     }
 
     @Override
@@ -49,7 +49,7 @@ public class HomeFragmentAdpater extends RecyclerView.Adapter<HomeFragmentAdpate
                 }else if(cb.getType().equals(Type.SPECIFICATION)){
                     IntentUtil.startActivity(mContext, SpecificationActivity.class);
                 }else if(cb.getType().equals(Type.COMPENSATION)){
-                    //IntentUtil.startActivity(mContext, SpecificationActivity.class);
+                    IntentUtil.startActivity(mContext, CompensationInfoActivity.class);
                 }
             }
         });
