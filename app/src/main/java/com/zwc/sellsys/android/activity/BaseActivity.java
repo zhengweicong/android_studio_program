@@ -8,6 +8,7 @@ import android.view.View;
 import com.zwc.sellsys.android.utils.AppUtil;
 
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
+    protected ActionBar mActionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +24,13 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
      * 隐藏ActionBar
      */
     protected void setActionBar() {
-        ActionBar actionBar = getSupportActionBar();
-        if(null != actionBar){
-            actionBar.hide();
+        mActionBar = getSupportActionBar();
+        if(null != mActionBar){
+            mActionBar.hide();
         }
     }
+
+
 
 
     @Override
