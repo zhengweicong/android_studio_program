@@ -99,7 +99,7 @@ public class AddOrderInfoActivity extends BaseActivity {
                 if (!StringUtil.isEmpty(content)) {
                     int orientSum = Integer.valueOf(content);
                     int minusSum = CounterUtil.count(CounterUtil.Type.MINUS, orientSum);
-                    mEditTextCount.setText(minusSum + "");
+                    mEditTextCount.setText(String.valueOf(minusSum));
                 } else {
                     mEditTextCount.setText("0");
                 }
@@ -109,7 +109,7 @@ public class AddOrderInfoActivity extends BaseActivity {
                 if (!StringUtil.isEmpty(content1)) {
                     int orientSum1 = Integer.valueOf(content1);
                     int plusSum = CounterUtil.count(CounterUtil.Type.PLUS, orientSum1);
-                    mEditTextCount.setText(plusSum + "");
+                    mEditTextCount.setText(String.valueOf(plusSum));
                 } else {
                     mEditTextCount.setText("0");
                 }
@@ -162,18 +162,18 @@ public class AddOrderInfoActivity extends BaseActivity {
                 case REQUEST_CODE_CHOOSE_USER:
                     UserBean userBean = (UserBean) data.getSerializableExtra(Constants.EXTRA_USER_BEAN_KEY);
                     mOrderBean.setBuyerId(userBean.getUserId());
-                    mTextViewBuyer.setText(null != userBean ? "购买者：" + userBean.getName() : "未找到此购买人");
+                    mTextViewBuyer.setText("购买者：" + userBean.getName());
                     break;
                 case REQUEST_CODE_CHOOSE_INTRODUCER:
                     UserBean userBean2 = (UserBean) data.getSerializableExtra(Constants.EXTRA_USER_BEAN_KEY);
                     mOrderBean.setIntroducerId(Integer.parseInt(userBean2.getUserId()));
-                    mTextViewIntroducer.setText(null != userBean2 ? "推荐人：" + userBean2.getName() : "未找到此介绍人");
+                    mTextViewIntroducer.setText("推荐人：" + userBean2.getName());
                     break;
                 case REQUEST_CODE_CHOOSE_SPECIFICATION:
                     SpecificationBean specBean = (SpecificationBean) data.getSerializableExtra(Constants.EXTRA_SPECIFICATION_KEY);
                     mOrderBean.setSpecificationId(Integer.parseInt(specBean.getSpecificationId()));
                     //mOrderBean.setCostPrice(specBean.getPrice());
-                    mTextViewSpecification.setText(null != specBean ? "规格：" + specBean.getWeight() : "未找到此规格");
+                    mTextViewSpecification.setText("规格：" + specBean.getWeight() );
                     break;
             }
         }

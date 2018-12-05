@@ -134,8 +134,6 @@ public class UserInfoActivity extends BaseActivity {
                             frame.refreshComplete();
                         }
                     }, delay);
-                } else {
-
                 }
             }
         });

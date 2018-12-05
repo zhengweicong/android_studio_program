@@ -46,9 +46,8 @@ public class CompensationInfoAdapter extends RecyclerView.Adapter<CompensationIn
     public MyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext).inflate(
                 R.layout.item_compensation_info,parent,false);
-        MyHolder holder = new MyHolder(view);
 
-        return holder;
+        return new MyHolder(view);
     }
 
     @Override
@@ -56,9 +55,9 @@ public class CompensationInfoAdapter extends RecyclerView.Adapter<CompensationIn
 
         CompensationBean compensationBean = mCompensationBeans.get(position);
         if (null != compensationBean) {
-            holder.tvOrderId.setText(compensationBean.getOrderId()+"");
+            holder.tvOrderId.setText(String.valueOf(compensationBean.getOrderId()));
             holder.tvDescription.setText(compensationBean.getDescription());
-            holder.tvPrice.setText(compensationBean.getPrice()+"");
+            holder.tvPrice.setText(String.valueOf(compensationBean.getPrice()));
         }
     }
 
@@ -73,7 +72,7 @@ public class CompensationInfoAdapter extends RecyclerView.Adapter<CompensationIn
         TextView tvDescription;
         TextView tvPrice;
 
-        public MyHolder(View itemView) {
+        private MyHolder(View itemView) {
             super(itemView);
             tvOrderId = itemView.findViewById(R.id.tv_compensation_order_id);
             tvDescription = itemView.findViewById(R.id.tv_compensation_description);
