@@ -1,6 +1,7 @@
 package com.zwc.sellsys.android.activity;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -17,6 +18,17 @@ import java.util.List;
 public class ChooseSpecificationActivity extends BaseActivity{
     private RecyclerView mRecyclerView;
 
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (null != mActionBar) {
+            mActionBar.show();
+            mActionBar.setTitle("选择规格信息");
+            mActionBar.setDisplayHomeAsUpEnabled(true);
+            mActionBar.setHomeButtonEnabled(true);
+        }
+    }
 
     @Override
     protected void setContentView() {

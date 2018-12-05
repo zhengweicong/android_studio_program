@@ -23,6 +23,12 @@ public class AddUserActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (null != mActionBar) {
+            mActionBar.show();
+            mActionBar.setTitle("添加用户信息");
+            mActionBar.setDisplayHomeAsUpEnabled(true);
+            mActionBar.setHomeButtonEnabled(true);
+        }
     }
 
     @Override

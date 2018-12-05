@@ -42,6 +42,12 @@ public class AddOrderInfoActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (null != mActionBar) {
+            mActionBar.show();
+            mActionBar.setTitle("添加订单信息");
+            mActionBar.setDisplayHomeAsUpEnabled(true);
+            mActionBar.setHomeButtonEnabled(true);
+        }
 
     }
 

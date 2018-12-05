@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.zwc.sellsys.android.R;
@@ -24,7 +25,12 @@ public class OrderInfoActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        if (null != mActionBar) {
+            mActionBar.show();
+            mActionBar.setTitle("订单信息");
+            mActionBar.setDisplayHomeAsUpEnabled(true);
+            mActionBar.setHomeButtonEnabled(true);
+        }
     }
 
     @Override
@@ -48,6 +54,17 @@ public class OrderInfoActivity extends BaseActivity {
         mRecyclerView.setAdapter(mOrderInfoAdapter);
 
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_top_add:
+                Intent intent = new Intent(this, AddOrderInfoActivity.class);
+                startActivityForResult(intent, REQUEST_CODE_ADD_ORDER);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

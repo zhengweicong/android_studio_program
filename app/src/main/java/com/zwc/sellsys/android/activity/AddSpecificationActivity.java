@@ -1,5 +1,6 @@
 package com.zwc.sellsys.android.activity;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
@@ -16,6 +17,17 @@ public class AddSpecificationActivity extends BaseActivity {
     private EditText mEditTextPrice;
     private EditText mEditTextDescription;
     private EditText mEditTextType;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (null != mActionBar) {
+            mActionBar.show();
+            mActionBar.setTitle("添加规格信息");
+            mActionBar.setDisplayHomeAsUpEnabled(true);
+            mActionBar.setHomeButtonEnabled(true);
+        }
+    }
 
     @Override
     protected void setContentView() {

@@ -5,6 +5,7 @@
     <string name="user_age">用户年龄</string>
     <string name="title_common_back">返回</string>
     <string name="title_common_insert">增加数据</string>
+    <string name="menu_add">增加</string>
 
     <string name="activity_main_user_phone">用户手机</string>
 

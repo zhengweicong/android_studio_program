@@ -1,10 +1,13 @@
 package com.zwc.sellsys.android.activity;
 
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
+import com.zwc.sellsys.android.R;
 import com.zwc.sellsys.android.utils.AppUtil;
 
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
@@ -30,7 +33,23 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         }
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                AppUtil.removeActivity(this);
+                return true;
+            default:
+                return  super.onOptionsItemSelected(item);
+        }
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_top_option, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
 
     @Override

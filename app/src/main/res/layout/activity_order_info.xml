@@ -10,6 +10,7 @@
     <include
         android:id="@+id/title_bar"
         layout="@layout/title_bar_common"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/rv_order_info"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

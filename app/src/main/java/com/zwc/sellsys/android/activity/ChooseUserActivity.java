@@ -23,7 +23,12 @@ public class ChooseUserActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        if (null != mActionBar) {
+            mActionBar.show();
+            mActionBar.setTitle("选择用户信息");
+            mActionBar.setDisplayHomeAsUpEnabled(true);
+            mActionBar.setHomeButtonEnabled(true);
+        }
     }
 
     @Override

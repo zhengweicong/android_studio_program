@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -43,7 +44,25 @@ public class UserInfoActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (null != mActionBar) {
+            mActionBar.show();
+            mActionBar.setTitle("用户信息");
+            mActionBar.setDisplayHomeAsUpEnabled(true);
+            mActionBar.setHomeButtonEnabled(true);
+        }
+    }
 
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_top_add:
+                Intent addUserIntent = new Intent(UserInfoActivity.this, AddUserActivity.class);
+                startActivityForResult(addUserIntent, REQUEST_CODE_ADD_USERINFO);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -126,8 +145,7 @@ public class UserInfoActivity extends BaseActivity {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_insert:
-                Intent addUserIntent = new Intent(UserInfoActivity.this, AddUserActivity.class);
-                startActivityForResult(addUserIntent, REQUEST_CODE_ADD_USERINFO);
+
                 break;
 
             case R.id.btn_back:
@@ -174,7 +192,7 @@ public class UserInfoActivity extends BaseActivity {
         List<UserBean> users = mUserDao.getUsers(mPagerBean);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.HORIZONTAL, 10, ResourseUtil.getColor(R.color.colorCameoBrown)));
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.HORIZONTAL, 10, ResourseUtil.getColor(R.color.colorPrimary)));
         mUserInfoAdapter = new UserInfoAdapter(this, users);
         mRecyclerView.setAdapter(mUserInfoAdapter);
 
