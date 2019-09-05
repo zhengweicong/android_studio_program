@@ -18,10 +18,12 @@ public class CompensationInfoActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mActionBar.show();
-        mActionBar.setTitle("赔偿信息");
-        mActionBar.setDisplayHomeAsUpEnabled(true);
-        mActionBar.setHomeButtonEnabled(true);
+        if(mActionBar != null){
+            mActionBar.show();
+            mActionBar.setTitle("赔偿信息");
+            mActionBar.setDisplayHomeAsUpEnabled(true);
+            mActionBar.setHomeButtonEnabled(true);
+        }
     }
 
     @Override

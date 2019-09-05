@@ -17,7 +17,7 @@ import com.zwc.sellsys.android.utils.AppUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends BaseActivity implements BottomNavigationView.OnNavigationItemSelectedListener,
+public class MainFragmentActivity extends BaseFragmentActivity implements BottomNavigationView.OnNavigationItemSelectedListener,
         ViewPager.OnPageChangeListener {
     private static final int ZERO = 0;
     private static final int FIRST = 1;

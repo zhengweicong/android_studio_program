@@ -26,6 +26,7 @@ public class AboutUsFragment extends BaseFragment {
     private AboutFragmentAdpater mAdpater;
 
 
+
     public AboutUsFragment() {
         // Required empty public constructor
     }
@@ -40,6 +41,9 @@ public class AboutUsFragment extends BaseFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_about_us, container, false);
+
+
+
         mRecyclerView = view.findViewById(R.id.rv_about_category);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         List<AboutCategoryBean> beans = new ArrayList<AboutCategoryBean>();

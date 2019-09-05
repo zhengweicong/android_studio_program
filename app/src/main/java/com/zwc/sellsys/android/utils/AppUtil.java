@@ -13,6 +13,8 @@ import java.util.TimerTask;
 public class AppUtil {
     public static final String TAG = "AppUtil";
 
+
+
     /**
      * 凡是打开的activity都装入集合
      */

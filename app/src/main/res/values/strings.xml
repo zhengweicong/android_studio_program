@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">卖苹果记录</string>
+    <string name="app_name">昭通水果售卖助手</string>
     <string name="title">这是个列表</string>
     <string name="user_name">用户名</string>
     <string name="user_age">用户年龄</string>

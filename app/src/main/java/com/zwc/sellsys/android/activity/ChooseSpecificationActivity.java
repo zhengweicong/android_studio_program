@@ -15,7 +15,7 @@ import com.zwc.sellsys.android.utils.AppUtil;
 
 import java.util.List;
 
-public class ChooseSpecificationActivity extends BaseActivity{
+public class ChooseSpecificationActivity extends BaseActivity {
     private RecyclerView mRecyclerView;
 
 

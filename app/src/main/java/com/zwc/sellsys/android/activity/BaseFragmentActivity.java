@@ -1,8 +1,8 @@
 package com.zwc.sellsys.android.activity;
 
-import android.app.ActionBar;
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,8 +12,8 @@ import com.zwc.sellsys.android.umeng.statistic.UmengPushUtil;
 import com.zwc.sellsys.android.umeng.statistic.UmengStatisticUtil;
 import com.zwc.sellsys.android.utils.AppUtil;
 
-public abstract class BaseActivity extends Activity implements View.OnClickListener{
-    public static final String TAG = BaseActivity.class.getSimpleName();
+public abstract class BaseFragmentActivity extends AppCompatActivity implements View.OnClickListener {
+    public static final String TAG = BaseFragmentActivity.class.getSimpleName();
     protected ActionBar mActionBar;
 
     @Override
@@ -32,27 +32,10 @@ public abstract class BaseActivity extends Activity implements View.OnClickListe
      * 隐藏ActionBar
      */
     protected void setActionBar() {
-        mActionBar = getActionBar();
+        mActionBar = getSupportActionBar();
         if(null != mActionBar){
             mActionBar.hide();
         }
-    }
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        AppUtil.removeActivity(this);
-        UmengStatisticUtil.onPause(this);
-    }
-
-    protected abstract void setContentView();
-
-    protected abstract void initView();
-
-    protected abstract void initData();
-
-    @Override
-    public void onClick(View v) {
-
     }
 
     @Override
@@ -72,4 +55,23 @@ public abstract class BaseActivity extends Activity implements View.OnClickListe
         getMenuInflater().inflate(R.menu.menu_top_option, menu);
         return super.onCreateOptionsMenu(menu);
     }
+
+
+    @Override
+    public void onClick(View v) {
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        AppUtil.removeActivity(this);
+        UmengStatisticUtil.onPause(this);
+    }
+
+    protected abstract void setContentView();
+
+    protected abstract void initView();
+
+    protected abstract void initData();
 }
