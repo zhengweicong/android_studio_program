@@ -12,6 +12,10 @@ import java.io.IOException;
 
 public class BuglyUtil {
 
+    /**
+     * bugly
+     * @param context
+     */
     public static void init(Context context) {
         // 获取当前包名
         String packageName = context.getPackageName();
